@@ -5,11 +5,16 @@ import { cn } from "@/lib/utils"
 import type React from "react"
 
 interface DiagonalBoxProps {
-  children: React.ReactNode
-  className?: string
+  className?: string;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+  children?: React.ReactNode;
 }
 
-export function DiagonalBox({ children, className }: DiagonalBoxProps) {
+export const DiagonalBox = ({ 
+  className,
+  onClick,
+  children 
+}: DiagonalBoxProps) => {
   return (
     <motion.div
       className={cn("relative", className)}
