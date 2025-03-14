@@ -90,7 +90,7 @@ function ProjectCard({
   const rotate = useMotionValue(project.position.rotate)
 
   const scale = useTransform([x, y], ([latestX, latestY]) => {
-    const distance = Math.sqrt(latestX ** 2 + latestY ** 2)
+    const distance = Math.sqrt((latestX as number) ** 2 + (latestY as number) ** 2)
     return 1 - Math.min(distance / 1000, 0.1)
   })
 
